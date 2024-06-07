@@ -262,7 +262,7 @@ const sell__ProductsTo = asyncHandler(async (req, res) => {
     // Email subject and content
     const subject = "Product Sold Notification";
     const sent_from = process.env.EMAIL_USER;
-    const reply_to = "noreply@suraj.com";
+    const reply_to = "noreply@gmail.com";
 
     // Send email notifications to the buyer
     await sendEmail(subject, (send_to = selectUser.email), sent_from, reply_to, (template = "purchaseSuccess"), (name = selectUser.fullName), (message = "You have purchased your product successfully"));
@@ -493,7 +493,7 @@ const Auto__SellAfterDays = async () => {
         const subject = "Product Sold Notification";
         const send_to = highestBid.bidPlacedBy.email;
         const sent_from = process.env.EMAIL_USER;
-        const reply_to = "noreply@gsgvh.com";
+        const reply_to = "noreply@gmail.com";
         const template = "purchaseSuccess";
         const name = highestBid.bidPlacedBy.fullName;
 
