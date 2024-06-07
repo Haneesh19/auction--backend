@@ -266,7 +266,7 @@ const verify__User = asyncHandler(async (req, res) => {
   // In this line, finding the token details
   const userToken = await Token.findOne({
     verifyToken: hashedToken,
-    expiresAt: { $gt: Date.now()+ 60 * (60 * 1000) },
+    expiresAt: { $gt: Date.now() },
   });
 
   if (!userToken) {
