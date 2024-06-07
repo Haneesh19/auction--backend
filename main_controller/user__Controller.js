@@ -283,7 +283,7 @@ const verify__User = asyncHandler(async (req, res) => {
   }
 
   // In this line, now verifying the user
-  user.isEmailVerified = true;
+  user.isEmailVerified = true || false;
   await user.save();
   res.status(200).json({ message: "Account Verification Successful" });
 });
